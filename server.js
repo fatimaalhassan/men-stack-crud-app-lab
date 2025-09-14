@@ -22,11 +22,8 @@ mongoose.connection.on('error', err => {
 // Models
 const Dessert = require('./models/dessert'); 
 // Middleware
-// app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
-// app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.get('/', (req, res) => {
@@ -59,7 +56,6 @@ app.post('/desserts', async (req, res) => {
  } else {
    req.body.isAvailable = false;
  }
-//  if (req.body.price) req.body.price = Number(req.body.price);
  await Dessert.create(req.body);
  res.redirect('/desserts');
 });
