@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit <%= dessert.name %></title>
+</head>
+<body>
+<h1>Edit <%= dessert.name %></h1>
+<a href="/desserts/<%= dessert._id %>">Back to <%= dessert.name %></a>
+<form action="/desserts/<%= dessert._id %>?_method=PUT" method="post">
+<label for="name">Name:</label>
+<input type="text" name="name" id="name" value="<%= dessert.name %>">
+
+<label for="reviews">reviews</label>
+<input type="text" name="reviews" id="reviews" value="<%= dessert.reviews %>"/>
+
+<label for="isReadyToEat">Is Ready To Eat?</label>
+<input type="checkbox" name="isReadyToEat" id="isReadyToEat" <% if(dessert.isReadyToEat){ %> checked <% } %>>
+<button type="submit">Edit <%= dessert.name %></button>
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add New Dessert</title>
+</head>
+<body>
+<h1>Add New Dessert 🍮</h1>
+<a href="/desserts/">Back to Desserts</a>
+<form action="/desserts" method="POST">
+<label for="name">Name:</label>
+<input type="text" name="name" id="name" required>
+
+<label for="reviews">reviews</label>
+<input type="text" name="reviews" id="reviews"/>
+
+<label for="isReadyToEat">Is Ready to Eat?</label>
+<input type="checkbox" name="isReadyToEat" id="isReadyToEat">
+<button type="submit">Create New Dessert</button>
+</form>
+</body>
+</html>

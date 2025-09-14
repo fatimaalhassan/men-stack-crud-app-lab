@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= dessert.name %></title>
+</head>
+<body>
+<a href="/desserts/">Back to Desserts</a>
+<h1><%= dessert.name %></h1>
+<p>Reviews: <%= dessert.reviews %></p>
+<% if(dessert.isReadyToEat){ %>
+<p>This dessert is ready to eat!</p>
+<% } else { %>
+<p>This dessert is not ready to eat!</p>
+<% } %>
+<form action="/desserts/<%= dessert._id %>?_method=DELETE" method="post">
+<button type="submit">Delete <%= dessert.name %></button>
+</form>
+<a href="/desserts/<%= dessert._id %>/edit">Edit <%= dessert.name %></a>
+</body>
+</html>
+ 
